@@ -1,6 +1,6 @@
 Task 1: Repository Test
 Write a @DataJpaTest for BookRepository testing the findByAuthor() method.
-
+```java
 @DataJpaTest
 class BookRepositoryTest {
     @Autowired
@@ -17,10 +17,11 @@ class BookRepositoryTest {
         // 3. Assert the result
     }
 }
+```
 ---------------------------------------------------------
-
 Task 2: Controller Test
 Write a @WebMvcTest for BookController testing the GET endpoint.
+```java
 @WebMvcTest(BookController.class)
 class BookControllerTest {
     @Autowired
@@ -37,11 +38,11 @@ class BookControllerTest {
         // 3. Verify status and JSON response
     }
 }
-
+```
 ----------------------------------------------------------
-
 Task 3: Integration Test
 Write a @SpringBootTest that tests the complete flow.
+```java
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
 class BookIntegrationTest {
@@ -56,3 +57,4 @@ class BookIntegrationTest {
         // 3. Verify the response
     }
 }
+```
