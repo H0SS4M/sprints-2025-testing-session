@@ -1,0 +1,58 @@
+Task 1: Repository Test
+Write a @DataJpaTest for BookRepository testing the findByAuthor() method.
+
+@DataJpaTest
+class BookRepositoryTest {
+    @Autowired
+    private TestEntityManager entityManager;
+
+    @Autowired
+    private BookRepository bookRepository;
+
+    @Test
+    void shouldFindBooksByAuthor() {
+        // TODO: Implement this test
+        // 1. Create and persist a book using entityManager
+        // 2. Use bookRepository.findByAuthor()
+        // 3. Assert the result
+    }
+}
+---------------------------------------------------------
+
+Task 2: Controller Test
+Write a @WebMvcTest for BookController testing the GET endpoint.
+@WebMvcTest(BookController.class)
+class BookControllerTest {
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private BookService bookService;
+
+    @Test
+    void shouldReturnBookWhenFound() throws Exception {
+        // TODO: Implement this test
+        // 1. Mock bookService.findById() to return a book
+        // 2. Perform GET request to /api/books/1
+        // 3. Verify status and JSON response
+    }
+}
+
+----------------------------------------------------------
+
+Task 3: Integration Test
+Write a @SpringBootTest that tests the complete flow.
+@SpringBootTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
+class BookIntegrationTest {
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @Test
+    void shouldCreateAndRetrieveBook() {
+        // TODO: Implement this test
+        // 1. Create a Book object
+        // 2. POST it using restTemplate
+        // 3. Verify the response
+    }
+}
